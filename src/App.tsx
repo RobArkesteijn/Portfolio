@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import { Link } from 'react-router-dom';
+import Footer from './Components/Footer/Footer';
 
 function App() {
+  const [aboutState, setAboutState] = useState(false);
+  const [skillsState, setSkillsState] = useState(false);
+  const [projectState, setProjectState] = useState(false);
+  const [futureState, setFutureState] = useState(false);
   return (
     <>
-      {/* <img className="logo" src={require("./R_logo.png")} alt="My personal Logo" /> */}
       <div className='title'>
         <div className='title-box'>
           <p className='title-welcome'>Welcome.</p>
@@ -17,26 +21,22 @@ function App() {
         </div>
       </div>
       <div className='line-container'>
-        <div className='animation-line'></div>
-        <div className='animation-line'></div>
-        <div className='animation-line'></div>
-        <div className='animation-line'></div>
+        <div className={aboutState ? 'animation-line animation-line-hover' : 'animation-line'}></div>
+        <div className={skillsState ? 'animation-line animation-line-hover' : 'animation-line'}></div>
+        <div className={projectState ? 'animation-line animation-line-hover' : 'animation-line'}></div>
+        <div className={futureState ? 'animation-line animation-line-hover' : 'animation-line'}></div>
       </div>
       <div className='menu'>
         <ul className='menu-list'>
-          <li className='menu-list-item'><Link className='menu-list-item-link' to='/about'>About Me</Link></li>
-          <li className='menu-list-item'><Link className='menu-list-item-link' to='/skills'>Skills</Link></li>
-          <li className='menu-list-item'><Link className='menu-list-item-link' to='/projects'>Projects</Link></li>
-          <li className='menu-list-item'><Link className='menu-list-item-link' to='/future'>Future</Link></li>
+          <li className='menu-list-item'><Link onMouseOver={() => setAboutState(true)} onMouseOut={() => setAboutState(false)} className='menu-list-item-link' to='/about'>About Me</Link></li>
+          <li className='menu-list-item'><Link onMouseOver={() => setSkillsState(true)} onMouseOut={() => setSkillsState(false)} className='menu-list-item-link' to='/skills'>Skills</Link></li>
+          <li className='menu-list-item'><Link onMouseOver={() => setProjectState(true)} onMouseOut={() => setProjectState(false)} className='menu-list-item-link' to='/projects'>Projects</Link></li>
+          <li className='menu-list-item'><Link onMouseOver={() => setFutureState(true)} onMouseOut={() => setFutureState(false)} className='menu-list-item-link' to='/future'>Future</Link></li>
         </ul>
       </div>
-      <footer className='footer'>
-        <ul className='footer-list'>
-          <li><a className='footer-list-item' target='_blank' href="https://www.linkedin.com/in/rob-arkesteijn-394550267/"><i className="fa-brands fa-linkedin"></i></a></li>
-          <li><a className='footer-list-item' target='_blank' href="https://github.com/RobArkesteijn"><i className="fa-brands fa-github"></i></a></li>
-          <li><a className='footer-list-item' target='_blank' href="mailto:rarkesteijn@outlook.com"><i className="fa-solid fa-envelope"></i></a></li>
-        </ul>
-      </footer>
+      <div className='footer-location'>
+        <Footer/>
+      </div>
     </>
   )
 }

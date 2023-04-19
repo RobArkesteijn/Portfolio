@@ -10,8 +10,11 @@
     left: -50vw;
     width: 50vw;
     height: 3px;
-    background: linear-gradient(to right, #3a373f, #A4CCDA, #A4CCDA, #A4CCDA);
+    background: linear-gradient(to right, #252329, #A4CCDA, #A4CCDA, #A4CCDA);
     animation: lines 4s ease-in-out forwards;
+  }
+  .animation-line-hover {
+    background: linear-gradient(to right, #252329, #50b9df, #50b9df, #50b9df);
   }
   @keyframes lines {
     0% {left: -50vw;}
@@ -50,9 +53,8 @@
       transition: .15s ease;
     }
     .menu-list-item-link:hover{
-      text-shadow: 0 0 15px #151316;
+      text-shadow: 0 0 20px #50b9df;
       color: #D7FDEC;
-      letter-spacing: 2px;
     }
     @keyframes list {
       0% {opacity: 0;}
@@ -108,40 +110,13 @@
   }
 }
 
-.footer {
+.footer-location {
   position: absolute;
-  width: 75vw;
-  height: 10vh;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
+  bottom: 10vh;
   opacity: 0;
   animation: footer 2s ease-in-out 4s forwards;
-  .footer-list {
-    list-style: none;
-    display: flex;
-    .footer-list-item {
-      margin: 0 5vw;
-      font-size: 2em;
-      cursor: pointer;
-      transition: .1s ease;
-      color: #B0C6CE;
-    }
-    .footer-list-item:hover{
-      color: #D7FDEC;
-      text-shadow: 0 0 15px #151316;
-    }
-  }
   @keyframes footer {
     0% {opacity: 0;}
     100% {opacity: 1;}
   }
-}
-
-.logo {
-  position: absolute;
-  height: 20vh;
-  width: auto;
-  top: 40vh;
-  left: 5vw;
 }

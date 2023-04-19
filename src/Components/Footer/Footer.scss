@@ -1,0 +1,22 @@
+.footer {
+    position: absolute;
+    width: 75vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    .footer-list {
+      list-style: none;
+      display: flex;
+      .footer-list-item {
+        margin: 0 5vw;
+        font-size: 2em;
+        cursor: pointer;
+        transition: .1s ease;
+        color: #B0C6CE;
+      }
+      .footer-list-item:hover{
+        color: #D7FDEC;
+        text-shadow: 0 0 15px #50b9df;
+      }
+    }
+  }

@@ -1,0 +1,78 @@
+.about-title {
+  font-family: 'Spectral', serif;
+  font-weight: 200;
+  color: #B2E4DB;
+  font-size: 4em;
+  text-align: center;
+  animation: title 2s ease-in-out forwards;
+  opacity: 0;
+  margin: 7vh 0 3vh 0;
+  @keyframes title {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+}
+
+.about-text {
+  position: relative;
+  left: 10vw;
+  height: 60vh;
+  width: 80vw;
+  overflow-x: auto;
+  animation: text 2s ease-in-out 2s forwards;
+  opacity: 0;
+  padding: 0 0 2vh;
+  .about-text-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    color: #B2E4DB;
+    font-size: 1.2em;
+    font-weight: 300;
+    .about-text-list-item {
+      min-width: 60vw;
+      margin: 0 10vw;
+      line-height: 35px;
+    }
+    .about-text-list-item-first {
+      min-width: 60vw;
+      margin: 0 10vw;
+      line-height: 35px;
+    }
+    .about-text-list-item-last {
+      min-width: 60vw;
+      margin: 0 10vw;
+      padding-right: 10vw;
+    }
+  }
+  @keyframes text {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+}
+
+.about-text::-webkit-scrollbar {
+  height: 5px;
+  background-color: transparent; /* Set desired background color for scrollbar */
+}
+
+.about-text::-webkit-scrollbar-thumb {
+  background: #A4CCDA;
+  border-radius: 10px;
+}
+
+.about-text::-webkit-scrollbar-track {
+  background-color: transparent; /* Set desired background color for scrollbar track */
+}
+
+.footer-aboutlocation {
+  position: absolute;
+  bottom: 10vh;
+  left: 12.5vw;
+  opacity: 0;
+  animation: footer 2s ease-in-out 2s forwards;
+  @keyframes footer {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+}
