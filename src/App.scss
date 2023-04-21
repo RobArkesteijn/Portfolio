@@ -1,3 +1,20 @@
+@keyframes shadow {
+  0% {background-position: -150% 0;}
+  100% {background-position: 10% 0;}
+}
+
+.logo {
+  position: absolute;
+  top: 3vh;
+  left: 3vw;
+  font-size: 4em;
+  width: auto;
+  color: #B2E4DB;
+  font-weight: 200;
+  font-family: 'Spectral', serif;
+  font-weight: 200;
+}
+
 .line-container {
   display: flex;
   flex-direction: column;
@@ -11,7 +28,7 @@
     width: 50vw;
     height: 3px;
     background: linear-gradient(to right, #252329, #A4CCDA, #A4CCDA, #A4CCDA);
-    animation: lines 4s ease-in-out forwards;
+    animation: lines 2s ease-in-out forwards;
   }
   .animation-line-hover {
     background: linear-gradient(to right, #252329, #50b9df, #50b9df, #50b9df);
@@ -32,7 +49,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Spectral', serif;
   .menu-list {
     list-style: none;
     display: flex;
@@ -42,9 +58,11 @@
     height: 80vh;
     bottom: 3.5vh;
     .menu-list-item {
+      font-family: 'Spectral', serif;
       font-size: 1.5em;
+      font-weight: 200;
       cursor: pointer;
-      animation: list 2s ease-in-out 4s forwards;
+      animation: list 1s ease-in-out 2s forwards;
       opacity: 0;
     }
     .menu-list-item-link {
@@ -53,7 +71,7 @@
       transition: .15s ease;
     }
     .menu-list-item-link:hover{
-      text-shadow: 0 0 20px #50b9df;
+      text-shadow: 0 0 10px #50b9df;
       color: #D7FDEC;
     }
     @keyframes list {
@@ -68,15 +86,15 @@
   height: 60vh;
   top: 13vh;
   width: 75vw;
-  font-family: 'Spectral', serif;
   color: #B2E4DB;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: title 2s ease-in-out 4s forwards;
+  animation: title 1s ease-in-out 2s forwards;
   opacity: 0;
+  font-family: 'Spectral', serif;
   .title-box{
     text-align: left;
     .title-welcome {
@@ -90,6 +108,7 @@
       padding: 1rem;
       color: #B2E4DB;
       position: relative;
+      font-weight: 200;
       .title-text-middle {
         padding: 10px 0;
       }
@@ -114,7 +133,7 @@
   position: absolute;
   bottom: 10vh;
   opacity: 0;
-  animation: footer 2s ease-in-out 4s forwards;
+  animation: footer 1s ease-in-out 2s forwards;
   @keyframes footer {
     0% {opacity: 0;}
     100% {opacity: 1;}

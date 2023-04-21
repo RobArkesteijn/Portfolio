@@ -1,0 +1,15 @@
+.return {
+    font-size: 2em;
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    z-index: 1;
+    cursor: pointer; 
+    .return-link {
+      color:#B2E4DB;
+    }
+    .return-link:hover {
+      color: #D7FDEC;
+      text-shadow: 0 0 20px #50b9df;
+    }
+  }

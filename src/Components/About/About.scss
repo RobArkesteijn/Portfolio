@@ -1,10 +1,9 @@
 .about-title {
-  font-family: 'Spectral', serif;
   font-weight: 200;
   color: #B2E4DB;
   font-size: 4em;
   text-align: center;
-  animation: title 2s ease-in-out forwards;
+  animation: title 1s ease-in-out forwards;
   opacity: 0;
   margin: 7vh 0 3vh 0;
   @keyframes title {
@@ -19,7 +18,7 @@
   height: 60vh;
   width: 80vw;
   overflow-x: auto;
-  animation: text 2s ease-in-out 2s forwards;
+  animation: text 1s ease-in-out 1s forwards;
   opacity: 0;
   padding: 0 0 2vh;
   .about-text-list {
@@ -27,7 +26,7 @@
     display: flex;
     flex-direction: row;
     color: #B2E4DB;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 300;
     .about-text-list-item {
       min-width: 60vw;
@@ -43,6 +42,7 @@
       min-width: 60vw;
       margin: 0 10vw;
       padding-right: 10vw;
+      line-height: 35px;
     }
   }
   @keyframes text {
@@ -70,7 +70,7 @@
   bottom: 10vh;
   left: 12.5vw;
   opacity: 0;
-  animation: footer 2s ease-in-out 2s forwards;
+  animation: footer 1s ease-in-out 1s forwards;
   @keyframes footer {
     0% {opacity: 0;}
     100% {opacity: 1;}

@@ -1,0 +1,93 @@
+.projects {
+    display: flex;
+    flex-direction: row;
+    opacity: 0;
+    animation: projects 1s ease-in-out 0s forwards;
+    .info-box {
+        width: 50vw;
+        height: 90vh;
+        margin: 0 5vw 0 10vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .info-box-title {
+            color: #B2E4DB;
+            font-size: 2.5em;
+            font-weight: 200;
+        }
+        .info-box-text {
+            color: #B2E4DB;
+            font-weight: 200;
+            word-spacing: 1px;
+            margin: 1vh 0 3vh;
+        }
+        .info-box-list {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            .info-box-list-item {
+                margin: 0 5vw;
+            }
+            .info-box-list-link {
+                text-decoration: none;
+                color: #B2E4DB;
+                font-weight: 200;
+                border-bottom: solid 1px #65e1ca;
+                transition: .15s ease;
+            }
+            .info-box-list-link:hover {
+                color: #D7FDEC;
+                text-shadow: 0 0 20px #50b9df;
+                border-bottom: solid 1px #50b9df;
+            }
+        }
+    }
+    .projects-menu {
+        height: 90vh;
+        width: 20vw;
+        margin: 0 10vw 0 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        .projects-title {
+            color: #B2E4DB;
+            font-size: 3em;
+            font-weight: 200;
+        }
+        .projects-menu-list {
+            list-style: none;
+            color: #65e1ca;
+            padding: 0 1rem;
+            position: relative;
+            .projects-menu-list-item {
+                margin: 2vh 0;
+                transition: .15s ease;
+                cursor: pointer;
+            }
+            .projects-menu-list-item:hover {
+                color: #D7FDEC;
+                text-shadow: 0 0 20px #50b9df;
+            }
+            .active {
+                color: #D7FDEC;
+                text-shadow: 0 0 20px #50b9df;
+            }
+        }
+        .projects-menu-list::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 3px;
+            background-image: linear-gradient(to bottom, #A9FBD7, #3a373f);
+          }
+    }
+}
+
+@keyframes projects {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
