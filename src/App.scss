@@ -3,18 +3,6 @@
   100% {background-position: 10% 0;}
 }
 
-.logo {
-  position: absolute;
-  top: 3vh;
-  left: 3vw;
-  font-size: 4em;
-  width: auto;
-  color: #B2E4DB;
-  font-weight: 200;
-  font-family: 'Spectral', serif;
-  font-weight: 200;
-}
-
 .line-container {
   display: flex;
   flex-direction: column;
@@ -56,7 +44,7 @@
     justify-content: space-around;
     position: relative;
     height: 80vh;
-    bottom: 3.5vh;
+    bottom: 20px;
     .menu-list-item {
       font-family: 'Spectral', serif;
       font-size: 1.5em;
@@ -70,7 +58,7 @@
       text-decoration: none;
       transition: .15s ease;
     }
-    .menu-list-item-link:hover{
+    .menu-list-item-link:active{
       text-shadow: 0 0 10px #50b9df;
       color: #D7FDEC;
     }
@@ -83,8 +71,8 @@
 
 .title {
   position: absolute;
-  height: 60vh;
-  top: 13vh;
+  top: 0;
+  bottom: 10vh;
   width: 75vw;
   color: #B2E4DB;
   text-align: center;
@@ -131,11 +119,81 @@
 
 .footer-location {
   position: absolute;
-  bottom: 10vh;
+  bottom: 5vh;
   opacity: 0;
   animation: footer 1s ease-in-out 2s forwards;
   @keyframes footer {
     0% {opacity: 0;}
     100% {opacity: 1;}
+  }
+}
+
+@media (min-width: 400px) and (max-width: 800px) {
+  .title {
+    margin-left: 12.5vw;
+    margin-top: 2.5vh;
+    position: static;
+    justify-content: flex-start;
+  }
+
+  .line-menu-container {
+    height: 40vh;
+    margin: 5vh 0;
+    .line-container {
+      position: static;
+      height: 40vh;
+      justify-content: space-around;
+      .animation-line {
+        left: 150vw;
+        width: 50vw;
+        background: linear-gradient(to left, #252329, #A4CCDA, #A4CCDA, #252329);
+      }
+      .animation-line-hover {
+        background: linear-gradient(to right, #252329, #50b9df, #50b9df, #252329);
+      }
+      @keyframes lines {
+        0% {left: 150vw;}
+        100% {left: 25vw;}
+      }
+    }
+    .menu {
+      position: relative;
+      left: 25vw;
+      top: -40vh;
+      height: 40vh;
+      width: 50vw;
+      .menu-list {
+        justify-content: space-around;
+        bottom: 15px;
+      }
+    }
+  }
+  
+  .footer-location {
+    position: relative;
+    bottom: 0;
+    left: 12.5vw;
+  }
+}
+
+@media (min-width: 1300px) {
+  .title {
+    .title-box{
+      .title-welcome {
+        font-size: 7em;
+      }
+      .title-textbox {
+        font-size: 1.2em;
+        max-width: 800px;
+      }
+    }
+  }
+  .menu {
+    .menu-list {
+      bottom: 25px;
+      .menu-list-item {
+        font-size: 2em;
+      }
+    }
   }
 }

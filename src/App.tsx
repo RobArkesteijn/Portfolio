@@ -20,19 +20,21 @@ function App() {
           </div>
         </div>
       </div>
-      <div className='line-container'>
-        <div className={aboutState ? 'animation-line animation-line-hover' : 'animation-line'}></div>
-        <div className={skillsState ? 'animation-line animation-line-hover' : 'animation-line'}></div>
-        <div className={projectState ? 'animation-line animation-line-hover' : 'animation-line'}></div>
-        <div className={futureState ? 'animation-line animation-line-hover' : 'animation-line'}></div>
-      </div>
-      <div className='menu'>
-        <ul className='menu-list'>
-          <li className='menu-list-item'><Link onMouseOver={() => setAboutState(true)} onMouseOut={() => setAboutState(false)} className='menu-list-item-link' to='/about'>About Me</Link></li>
-          <li className='menu-list-item'><Link onMouseOver={() => setSkillsState(true)} onMouseOut={() => setSkillsState(false)} className='menu-list-item-link' to='/skills'>Skills</Link></li>
-          <li className='menu-list-item'><Link onMouseOver={() => setProjectState(true)} onMouseOut={() => setProjectState(false)} className='menu-list-item-link' to='/projects'>Projects</Link></li>
-          <li className='menu-list-item'><Link onMouseOver={() => setFutureState(true)} onMouseOut={() => setFutureState(false)} className='menu-list-item-link' to='/future'>Future</Link></li>
-        </ul>
+      <div className='line-menu-container'>
+        <div className='line-container'>
+          <div className={aboutState ? 'animation-line animation-line-hover' : 'animation-line'}></div>
+          <div className={skillsState ? 'animation-line animation-line-hover' : 'animation-line'}></div>
+          <div className={projectState ? 'animation-line animation-line-hover' : 'animation-line'}></div>
+          <div className={futureState ? 'animation-line animation-line-hover' : 'animation-line'}></div>
+        </div>
+        <div className='menu'>
+          <ul className='menu-list'>
+            <li className='menu-list-item'><Link onMouseOver={() => setAboutState(true)} onMouseOut={() => setAboutState(false)} className='menu-list-item-link' to='/about'>About Me</Link></li>
+            <li className='menu-list-item'><Link onMouseOver={() => setSkillsState(true)} onMouseOut={() => setSkillsState(false)} className='menu-list-item-link' to='/skills'>Skills</Link></li>
+            <li className='menu-list-item'><Link onMouseOver={() => setProjectState(true)} onMouseOut={() => setProjectState(false)} className='menu-list-item-link' to='/projects'>Projects</Link></li>
+            <li className='menu-list-item'><Link onMouseOver={() => setFutureState(true)} onMouseOut={() => setFutureState(false)} className='menu-list-item-link' to='/future'>Future</Link></li>
+          </ul>
+        </div>
       </div>
       <div className='footer-location'>
         <Footer/>
