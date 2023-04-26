@@ -8,10 +8,14 @@ function Projects() {
   const [clicked, setClicked] = useState(false);
   const [project, setProject] = useState('Salt Student Overview');
   const [event, setEvent] = useState('Salt Student Overview');
-  const [text, setText] = useState("Salt Student Overview is a full-stack application designed for students at </salt> (School of Applied Technology). It provides an intuitive overview of all the important information that students need during the bootcamp. With Salt Student Overview, students can view their test results and the associated feedback. They can also see which week of the bootcamp they're currently in, along with the topics covered during that week. In addition, students get a clear and organized view of their Google calendar. But Salt Student Overview isn't just for students. Instructors can also use the website to manage weekend test results and feedback. They can upload lecture slides, which students can access under the 'Lecture Slides' tab. Overall, Salt Student Overview makes it easy for both students and instructors to stay up-to-date and organized during the bootcamp.");
+  const [text, setText] = useState("Salt Student Overview is a web app for </salt> bootcamp students and instructors. It provides an organized view of important information such as test results, feedback, and the weekly topics covered. The website also displays a clear Google calendar. Instructors can manage test results and upload lecture slides. Salt Student Overview streamlines communication and organization for everyone involved in the bootcamp.");
   const [github, setGithub] = useState('https://github.com/RobArkesteijn/Salt-Student-Overview');
   const [youtube, setYoutube] = useState('https://www.youtube.com/watch?v=EnbXmdXHg1E');
   const [website, setWebsite] = useState('');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     function handleProject() {
@@ -20,7 +24,7 @@ function Projects() {
         setOpacity(1);
         setProject(event);
         if (event === 'Salt Student Overview'){
-          setText("Salt Student Overview is a full-stack application designed for students at </salt> (School of Applied Technology). It provides an intuitive overview of all the important information that students need during the bootcamp. With Salt Student Overview, students can view their test results and the associated feedback. They can also see which week of the bootcamp they're currently in, along with the topics covered during that week. In addition, students get a clear and organized view of their Google calendar. But Salt Student Overview isn't just for students. Instructors can also use the website to manage weekend test results and feedback. They can upload lecture slides, which students can access under the 'Lecture Slides' tab. Overall, Salt Student Overview makes it easy for both students and instructors to stay up-to-date and organized during the bootcamp.");
+          setText("Salt Student Overview is a web app for </salt> bootcamp students and instructors. It provides an organized view of important information such as test results, feedback, and the weekly topics covered. The website also displays a clear Google calendar. Instructors can manage test results and upload lecture slides. Salt Student Overview streamlines communication and organization for everyone involved in the bootcamp.");
           setWebsite('');
           setGithub('https://github.com/RobArkesteijn/Salt-Student-Overview');
           setYoutube('https://www.youtube.com/watch?v=EnbXmdXHg1E');
@@ -53,9 +57,9 @@ function Projects() {
         <p className='info-box-title'>{project}</p>
         <p className='info-box-text'>{text}</p>
         <ul className='info-box-list'>
-          {website !== '' && <li className='info-box-list-item'><a className='info-box-list-link' href={website} target='_blank'>Website</a></li>}
-          {youtube !== '' && <li className='info-box-list-item'><a className='info-box-list-link' href={youtube} target='_blank'>YouTube</a></li>}
-          {github !== '' && <li className='info-box-list-item'><a className='info-box-list-link' href={github} target='_blank'>GitHub</a></li>}
+          {website !== '' && <li className='info-box-list-item'><a className='info-box-list-link' href={website} target='_blank' rel="noreferrer">Website</a></li>}
+          {youtube !== '' && <li className='info-box-list-item'><a className='info-box-list-link' href={youtube} target='_blank' rel="noreferrer">YouTube</a></li>}
+          {github !== '' && <li className='info-box-list-item'><a className='info-box-list-link' href={github} target='_blank' rel="noreferrer">GitHub</a></li>}
         </ul>
       </div>
       <div className='projects-menu'>
@@ -63,20 +67,20 @@ function Projects() {
         <ul className='projects-menu-list'>
         <li onClick={() => {
           setEvent('Salt Student Overview');
-          setClicked(!clicked);
+          setClicked(true);
           }} className={event === 'Salt Student Overview' ? 'projects-menu-list-item active' : 'projects-menu-list-item'}>Salt Student Overview</li>
           <li onClick={() => {
             setEvent('NXTDES');
-            setClicked(!clicked);
+            setClicked(true);
           }} className={event === 'NXTDES' ? 'projects-menu-list-item active' : 'projects-menu-list-item'}>NXTDES</li>
           <li onClick={() => {
             setEvent('Full Stack Dictionary');
-            setClicked(!clicked);
+            setClicked(true);
           }} className={event === 'Full Stack Dictionary' ? 'projects-menu-list-item active' : 'projects-menu-list-item'}>Full Stack Dictionary</li>
         </ul>
       </div>
       </div>
-      <div className='footer-futurelocation'>
+      <div className='footer-projectlocation'>
         <Footer/>
       </div>
     </>

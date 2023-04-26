@@ -1,13 +1,14 @@
 .footer {
-    width: 75vw;
-    height: 5vh;
+    width: 100vw;
+    height: 15vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     .footer-list {
       list-style: none;
       display: flex;
       .footer-list-item {
-        margin: 0 5vw;
+        margin: 0 7.5vw;
         font-size: 2em;
         cursor: pointer;
         transition: .1s ease;
@@ -16,6 +17,23 @@
       .footer-list-item:active{
         color: #D7FDEC;
         text-shadow: 0 0 15px #50b9df;
+      }
+    }
+  }
+
+  @media (min-width: 800px) {
+    .footer-list-item:hover{
+      color: #D7FDEC !important;
+      text-shadow: 0 0 15px #50b9df;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .footer {
+      .footer-list {
+        .footer-list-item {
+          font-size: 2.5em;
+        }
       }
     }
   }

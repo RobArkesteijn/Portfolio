@@ -10,6 +10,7 @@
         color: #B2E4DB;
         animation: title 1s ease-in-out 0s forwards;
         opacity: 0;
+        height: 12.5vh;
     }
     @keyframes title {
         0% {opacity: 0;}
@@ -24,139 +25,105 @@
     cursor: pointer;
 }
 
-.icon:hover {
+.icon:active {
     color: #D7FDEC;
     text-shadow: 0 0 30px #50b9df;
 }
 
-.icon-row9 {
+.icon-row {
     position: absolute;
-    top: 20vh;
-    left: 5vw;
-    width: 9vw;
-    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    opacity: 0;
+}
+
+.icon-column {
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    animation: row 1s ease-in-out 1s forwards;
     opacity: 0;
 }
 
 .icon-row1 {
-    position: absolute;
+    top: 20vh;
+    left: 5vw;
+    width: 9vw;
+    height: 60vh;
+    animation: row 1s ease-in-out 1s forwards;
+}
+
+.icon-row2 {
     top: 10vh;
     left: 14vw;
     width: 9vw;
     height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     animation: row 1s ease-in-out 1.1s forwards;
-    opacity: 0;
 }
 
 .icon-row3 {
-    position: absolute;
     top: 7.5vh;
     height: 12.5vh;
     left: 25vw;
     width: 50vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     animation: row 1s ease-in-out 1.2s forwards;
-    opacity: 0;
 }
 
 .icon-row4 {
-    position: absolute;
     top: 20vh;
     height: 12.5vh;
     left: 25vw;
     width: 50vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     animation: row 1s ease-in-out 1.3s forwards;
-    opacity: 0;
 }
 
 .icon-row5 {
-    position: absolute;
     top: 32.5vh;
     height: 12.5vh;
     left: 25vw;
     width: 50vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     animation: row 1s ease-in-out 1.4s forwards;
-    opacity: 0;
 }
 
 .icon-row6 {
-    position: absolute;
-    bottom: 25vh;
+    top: 57.5vh;
     height: 12.5vh;
     left: 25vw;
     width: 50vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     animation: row 1s ease-in-out 1.5s forwards;
-    opacity: 0;
 }
 
 .icon-row7 {
-    position: absolute;
-    bottom: 12.5vh;
+    top: 70vh;
     height: 12.5vh;
     left: 25vw;
     width: 50vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     animation: row 1s ease-in-out 1.6s forwards;
-    opacity: 0;
 }
 
 .icon-row8 {
-    position: absolute;
-    bottom: 0;
+    top: 82.5vh;
     height: 12.5vh;
     left: 25vw;
     width: 50vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     animation: row 1s ease-in-out 1.7s forwards;
-    opacity: 0;
 }
 
-.icon-row2 {
-    position: absolute;
+.icon-row9 {
     top: 10vh;
     right: 9vw;
     width: 9vw;
     height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     animation: row 1s ease-in-out 1.8s forwards;
-    opacity: 0;
 }
 
 .icon-row10 {
-    position: absolute;
     top: 20vh;
     right: 0;
     width: 9vw;
     height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     animation: row 1s ease-in-out 1.9s forwards;
-    opacity: 0;
 }
 
 @keyframes row {
@@ -169,5 +136,95 @@
         opacity: 1;
         color: #65e1ca;
         text-shadow: 0 0 0 #50b9df;
+    }
+}
+
+@media (max-width: 599px) {
+    .skills-title-box {
+        .skills-title {
+            font-size: 1.7em;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .skills-title-box {
+        height: 15vh;
+        padding: 1rem 0;
+        .skills-title {
+            width: 60vw;
+            text-align: center;
+        }
+    }
+    .icon-box {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .icon-row {
+            position: static;
+            height: 8vh;
+            width: 80vw;
+            .icon {
+                font-size: 2.5em;
+            }
+        }
+        .icon-column {
+            flex-direction: row;
+            position: static;
+            height: 8vh;
+            width: 80vw;
+            .icon {
+                font-size: 2.5em;
+            }
+        }
+        .icon-first, .icon-last {
+            justify-content: space-evenly;
+        }
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+    .skills-title-box {
+        .skills-title {
+            font-size: 2.5em;
+        }
+    }
+}
+
+@media (min-width: 801px) and (max-width: 999px) {
+    .skills-title-box {
+        .skills-title {
+            font-size: 2.5em;
+            width: 50vw;
+            text-align: center;
+        }
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+    .skills-title-box {
+        .skills-title {
+            font-size: 2.5em;
+            width: 50vw;
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .icon:hover {
+        color: #D7FDEC;
+        text-shadow: 0 0 30px #50b9df;
+    }
+}
+
+@media (min-width: 1400px) {
+    .skills-title-box {
+        .skills-title {
+            font-size: 3em;
+        }
+    }
+    .icon {
+        font-size: 4em;
     }
 }

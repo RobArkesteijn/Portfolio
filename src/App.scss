@@ -1,8 +1,3 @@
-@keyframes shadow {
-  0% {background-position: -150% 0;}
-  100% {background-position: 10% 0;}
-}
-
 .line-container {
   display: flex;
   flex-direction: column;
@@ -10,6 +5,7 @@
   position: relative;
   top: 20vh;
   height: 60vh;
+  overflow: hidden;
   .animation-line {
     position: relative;
     left: -50vw;
@@ -72,7 +68,6 @@
 .title {
   position: absolute;
   top: 0;
-  bottom: 10vh;
   width: 75vw;
   color: #B2E4DB;
   text-align: center;
@@ -90,8 +85,6 @@
       font-weight: 200;
     }
     .title-textbox {
-      min-width: 300px;
-      max-width: 500px;
       text-align: left;
       padding: 1rem;
       color: #B2E4DB;
@@ -118,8 +111,6 @@
 }
 
 .footer-location {
-  position: absolute;
-  bottom: 5vh;
   opacity: 0;
   animation: footer 1s ease-in-out 2s forwards;
   @keyframes footer {
@@ -128,19 +119,26 @@
   }
 }
 
-@media (min-width: 400px) and (max-width: 800px) {
+@media (max-width: 800px) {
   .title {
     margin-left: 12.5vw;
     margin-top: 2.5vh;
     position: static;
     justify-content: flex-start;
+    .title-box {
+      .title-welcome {
+        font-size: 4em;
+      }
+      .title-textbox {
+        font-size: .9em;
+      }
+    }
   }
-
   .line-menu-container {
     height: 40vh;
-    margin: 5vh 0;
     .line-container {
-      position: static;
+      position: relative;
+      top: 15px;
       height: 40vh;
       justify-content: space-around;
       .animation-line {
@@ -163,18 +161,37 @@
       height: 40vh;
       width: 50vw;
       .menu-list {
+        bottom: 0;
         justify-content: space-around;
-        bottom: 15px;
+        height: 40vh;
       }
     }
   }
-  
-  .footer-location {
-    position: relative;
-    bottom: 0;
-    left: 12.5vw;
+}
+
+@media (min-width: 801px) {
+  .welcomepage {
+    height: 85vh;
+    width: 100vw;
+  }
+  .menu-list-item-link:hover{
+    text-shadow: 0 0 10px #50b9df;
+    color: #D7FDEC;
+  }
+  .title {
+    height: 85vh;
+    .title-box {
+      .title-textbox {
+        min-width: 300px;
+        max-width: 500px;
+      }
+    }
   }
 }
+
+// @media (min-width: 900px) {
+  
+// }
 
 @media (min-width: 1300px) {
   .title {
@@ -190,7 +207,6 @@
   }
   .menu {
     .menu-list {
-      bottom: 25px;
       .menu-list-item {
         font-size: 2em;
       }

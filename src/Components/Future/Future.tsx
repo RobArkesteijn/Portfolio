@@ -13,6 +13,10 @@ function Future() {
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     function handleFuture() {
       setOpacity(0);
       setTimeout(() => {
@@ -20,13 +24,13 @@ function Future() {
         setStack(mockStack);
         setOpacity(1);
         if (mockProject === 'NXTDES 2.0') {
-          setText('NXTDES (Next Destination) is my travel blog, but it has not been touched since August 2022, and it can use an upgrade. In order to make it good, I have to basically remake it entirely, because it is not well build fundamentally. I want to make it in such a way so that it will be easier to add new page and thus take less time to update.');
+          setText("My travel blog, NXTDES (Next Destination), has not been updated since August 2022 and needs some improvements. I've realized that the blog's foundation is not well-built, so in order to make it truly good, I'll need to completely remake it. My goal is to create a new structure that will make it easier to add new pages and streamline the updating process.");
         }
         if (mockProject === 'Unknown') {
-          setText('Still looking for inspiration on what to work on...');
+          setText('This will be updated by the time I came up with a new idea for a project..');
         }
         if (mockProject === 'Unknown 2') {
-          setText('Still looking for inspiration on what to work on...');
+          setText('This will be updated by the time I came up with a new idea for a project..');
         }
     }, 250);
     }

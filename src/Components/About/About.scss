@@ -1,78 +1,149 @@
-.about-title {
-  font-weight: 200;
-  color: #B2E4DB;
-  font-size: 4em;
-  text-align: center;
-  animation: title 1s ease-in-out forwards;
-  opacity: 0;
-  margin: 7vh 0 3vh 0;
-  @keyframes title {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  }
-}
-
-.about-text {
-  position: relative;
-  left: 10vw;
-  height: 60vh;
-  width: 80vw;
-  overflow-x: auto;
-  animation: text 1s ease-in-out 1s forwards;
-  opacity: 0;
-  padding: 0 0 2vh;
-  .about-text-list {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
+.about {
+  min-height: 40vh;
+  overflow-x: hidden;
+  .about-title {
+    padding: 3.5vh 0 2.5vh;
+    font-weight: 200;
     color: #B2E4DB;
-    font-size: 1em;
-    font-weight: 300;
-    .about-text-list-item {
-      min-width: 60vw;
-      margin: 0 10vw;
-      line-height: 35px;
-    }
-    .about-text-list-item-first {
-      min-width: 60vw;
-      margin: 0 10vw;
-      line-height: 35px;
-    }
-    .about-text-list-item-last {
-      min-width: 60vw;
-      margin: 0 10vw;
-      padding-right: 10vw;
-      line-height: 35px;
+    font-size: 4em;
+    text-align: center;
+    animation: title 1s ease-in-out forwards;
+    opacity: 0;
+    @keyframes title {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
     }
   }
-  @keyframes text {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+  .about-text {
+    position: relative;
+    left: 5vw;
+    width: 80vw;
+    animation: text 1s ease-in-out 1s forwards;
+    opacity: 0;
+    transition: .5s ease-in-out;
+    .about-text-list {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      color: #B2E4DB;
+      font-size: 1em;
+      font-weight: 200;
+      .about-text-list-item {
+        min-width: 70vw;
+        margin: 0 10vw;
+        line-height: 35px;
+      }
+      .about-text-list-item-first {
+        min-width: 70vw;
+        margin: 0 10vw;
+        line-height: 35px;
+      }
+      .about-text-list-item-last {
+        min-width: 70vw;
+        margin: 0 10vw;
+        padding-right: 10vw;
+        line-height: 35px;
+      }
+    }
+    @keyframes text {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+  }
+  .about-text::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+    background-color: transparent;
+  }
+  .about-text::-webkit-scrollbar-thumb {
+    background: #A4CCDA;
+    border-radius: 10px;
+  }
+  .about-text::-webkit-scrollbar-track {
+    background-color: transparent;
   }
 }
 
-.about-text::-webkit-scrollbar {
-  height: 5px;
-  background-color: transparent; /* Set desired background color for scrollbar */
-}
-
-.about-text::-webkit-scrollbar-thumb {
-  background: #A4CCDA;
-  border-radius: 10px;
-}
-
-.about-text::-webkit-scrollbar-track {
-  background-color: transparent; /* Set desired background color for scrollbar track */
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  color: #65e1ca;
+  margin-top: 5vh;
+  .pagination-item {
+    margin: 0 3vw;
+    cursor: pointer;
+    transition: .15s ease;
+    user-select: none;
+  }
+  .pagination-item:active {
+    color: #D7FDEC;
+    text-shadow: 0 0 20px #50b9df;
+    text-decoration: underline;
+  }
+  .active {
+    color: #D7FDEC;
+    text-shadow: 0 0 20px #50b9df;
+    text-decoration: underline;
+  }
 }
 
 .footer-aboutlocation {
-  position: absolute;
-  bottom: 10vh;
-  left: 12.5vw;
   opacity: 0;
   animation: footer 1s ease-in-out 1s forwards;
   @keyframes footer {
     0% {opacity: 0;}
     100% {opacity: 1;}
+  }
+}
+
+@media (max-width: 599px) {
+  .about-title {
+    font-size: 2em !important;
+    width: 80vw !important;
+    margin-left: 10vw !important;
+  }
+  .about-text {
+    max-height: 60vh !important;
+    .about-text-list {
+      font-size: .9em !important;
+    }
+  }
+}
+
+
+@media (min-width: 600px) and (max-width: 799px) {
+  .about-title {
+    font-size: 3em !important;
+  }
+  .about-text {
+    max-height: 60vh !important;
+    .about-text-list {
+      font-size: 1.1em !important;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .about {
+    min-height: 77vh;
+  }
+  .pagination {
+    .pagination-item{ 
+      font-size: 1.2em;
+    }
+    .pagination-item:hover {
+      color: #D7FDEC;
+      text-shadow: 0 0 20px #50b9df;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .about-text {
+    .about-text-list {
+      font-size: 1.3em !important;
+    }
   }
 }

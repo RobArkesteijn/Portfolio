@@ -8,6 +8,20 @@
     .return-link {
       color:#B2E4DB;
     }
+    .return-link:active {
+      color: #D7FDEC;
+      text-shadow: 0 0 20px #50b9df;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .return {
+      font-size: 1.5em;
+      left: 3vw;
+    }
+  }
+
+  @media (min-width: 800px) {
     .return-link:hover {
       color: #D7FDEC;
       text-shadow: 0 0 20px #50b9df;
