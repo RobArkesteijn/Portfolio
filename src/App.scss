@@ -1,214 +1,247 @@
-.line-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  top: 20vh;
-  height: 60vh;
-  overflow: hidden;
-  .animation-line {
-    position: relative;
-    left: -50vw;
-    width: 50vw;
-    height: 3px;
-    background: linear-gradient(to right, #252329, #A4CCDA, #A4CCDA, #A4CCDA);
-    animation: lines 2s ease-in-out forwards;
-  }
-  .animation-line-hover {
-    background: linear-gradient(to right, #252329, #50b9df, #50b9df, #50b9df);
-  }
-  @keyframes lines {
-    0% {left: -50vw;}
-    100% {left: 75vw;}
-  }
-}
+@import './assets/css/main';
 
-.menu {
-  width: 25vw;
-  text-align: center;
-  height: 80vh;
-  position: absolute;
-  left: 75vw;
-  top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  .menu-list {
+.welcomepage {
+  @include tablet {
+    height: 85vh;
+    width: 100vw;
+  }
+
+  &__line-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    top: 15px;
+    height: 40vh;
+    justify-content: space-around;
+
+    @include tablet {
+      justify-content: space-between;
+      top: 20vh;
+      height: 60vh;
+    }
+  }
+
+  &__line-menu-container {
+    height: 40vh;
+
+    @include tablet {
+      height: unset;
+    }
+  }
+
+  &__animation-line {
+    position: relative;
+    animation: lines 2s ease-in-out forwards;
+    left: 150vw;
+    width: 50vw;
+    height: 2px;
+    background: linear-gradient(
+      to left,
+      #252329,
+      #a4ccda,
+      #a4ccda,
+      #252329
+    );
+
+    @keyframes lines {
+      to {
+        left: 25vw;
+      }
+    }
+
+    @include tablet {
+      left: -50vw;
+      width: 50vw;
+      background: linear-gradient(to right, #252329, #a4ccda, #a4ccda, #a4ccda);
+
+      @keyframes lines {
+        to {
+          left: 75vw;
+        }
+      }
+    }
+  }
+
+  &__animation-line-hover {
+    background: linear-gradient(
+      to right,
+      #252329,
+      #50b9df,
+      #50b9df,
+      #252329
+    );
+      
+    @include tablet {
+      background: linear-gradient(
+        to right, 
+        #252329, 
+        #50b9df, 
+        #50b9df, 
+        #50b9df);
+    } 
+  }
+
+  &__menu {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    left: 25vw;
+    top: -40vh;
+    height: 40vh;
+    width: 50vw;
+
+    @include tablet {
+      position: absolute;
+      left: 75vw;
+      top: 10vh;
+      height: 80vh;
+      width: 25vw;
+    }
+  }
+
+  &__menu-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     position: relative;
-    height: 80vh;
-    bottom: 20px;
-    .menu-list-item {
-      font-family: 'Spectral', serif;
-      font-size: 1.5em;
-      font-weight: 200;
-      cursor: pointer;
-      animation: list 1s ease-in-out 2s forwards;
-      opacity: 0;
-    }
-    .menu-list-item-link {
-      color: #B2E4DB;
-      text-decoration: none;
-      transition: .15s ease;
-    }
-    .menu-list-item-link:active{
-      text-shadow: 0 0 10px #50b9df;
-      color: #D7FDEC;
-    }
-    @keyframes list {
-      0% {opacity: 0;}
-      100% {opacity: 1;}
+    bottom: 0;
+    justify-content: space-around;
+    height: 40vh;
+
+    @include tablet {
+      height: 80vh;
+      bottom: 20px;
     }
   }
-}
 
-.title {
-  position: absolute;
-  top: 0;
-  width: 75vw;
-  color: #B2E4DB;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  animation: title 1s ease-in-out 2s forwards;
-  opacity: 0;
-  font-family: 'Spectral', serif;
-  .title-box{
-    text-align: left;
-    .title-welcome {
-      font-size: 5em;
-      font-weight: 200;
-    }
-    .title-textbox {
-      text-align: left;
-      padding: 1rem;
-      color: #B2E4DB;
-      position: relative;
-      font-weight: 200;
-      .title-text-middle {
-        padding: 10px 0;
+  &__menu-list-item {
+    font-family: "Spectral", serif;
+    font-size: 1.5em;
+    font-weight: 200;
+    cursor: pointer;
+    animation: list 1s ease-in-out 2s forwards;
+    opacity: 0;
+
+    @keyframes list {
+      to {
+        opacity: 1;
       }
     }
-    .title-textbox::before {
+
+    @include desktop-xl {
+      font-size: 2em;
+    }
+  }
+
+  &__menu-list-item-link {
+    color: #b2e4db;
+    text-decoration: none;
+    transition: 0.15s ease;
+
+    &:active {
+      text-shadow: 0 0 10px #50b9df;
+      color: #d7fdec;
+    }
+
+    @include tablet {
+      &:hover {
+        text-shadow: 0 0 10px #50b9df;
+        color: #d7fdec;
+      }
+    }
+  }
+
+  &__title {
+    top: 0;
+    width: 75vw;
+    color: #b2e4db;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: title 1s ease-in-out 2s forwards;
+    opacity: 0;
+    font-family: "Spectral", serif;
+    margin-left: 12.5vw;
+    margin-top: 2.5vh;
+    position: static;
+    justify-content: flex-start;
+
+    @include tablet {
+      justify-content: center;
+      position: absolute;
+      margin: unset;
+      height: 85vh;
+    }
+
+    @keyframes title {
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__title-box {
+    text-align: left;
+  }
+
+  &__title-welcome {
+    font-size: 4em;
+    font-weight: 200;
+
+    @include tablet {
+      font-size: 5em;
+    }
+
+    @include desktop-xl {
+      font-size: 7em;
+    }
+  }
+
+  &__title-textbox {
+    text-align: left;
+    padding: 1rem;
+    color: #b2e4db;
+    position: relative;
+    font-weight: 200;
+    font-size: 0.9em;
+
+    @include tablet {
+      font-size: 1em;
+      min-width: 300px;
+      max-width: 500px;
+    }
+
+    @include desktop-xl {
+      font-size: 1.2em;
+      max-width: 800px;
+    }
+  }
+
+  &__title-text-middle {
+    padding: 10px 0;
+
+    &::before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       height: 100%;
       width: 3px;
-      background-image: linear-gradient(to bottom, #A9FBD7, #3a373f);
+      background-image: linear-gradient(to bottom, #a9fbd7, #3a373f);
     }
   }
-  @keyframes title {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  }
-}
 
-.footer-location {
-  opacity: 0;
-  animation: footer 1s ease-in-out 2s forwards;
-  @keyframes footer {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  }
-}
+  &__footer-location {
+    opacity: 0;
+    animation: footer 1s ease-in-out 2s forwards;
 
-@media (max-width: 800px) {
-  .title {
-    margin-left: 12.5vw;
-    margin-top: 2.5vh;
-    position: static;
-    justify-content: flex-start;
-    .title-box {
-      .title-welcome {
-        font-size: 4em;
-      }
-      .title-textbox {
-        font-size: .9em;
-      }
-    }
-  }
-  .line-menu-container {
-    height: 40vh;
-    .line-container {
-      position: relative;
-      top: 15px;
-      height: 40vh;
-      justify-content: space-around;
-      .animation-line {
-        left: 150vw;
-        width: 50vw;
-        background: linear-gradient(to left, #252329, #A4CCDA, #A4CCDA, #252329);
-      }
-      .animation-line-hover {
-        background: linear-gradient(to right, #252329, #50b9df, #50b9df, #252329);
-      }
-      @keyframes lines {
-        0% {left: 150vw;}
-        100% {left: 25vw;}
-      }
-    }
-    .menu {
-      position: relative;
-      left: 25vw;
-      top: -40vh;
-      height: 40vh;
-      width: 50vw;
-      .menu-list {
-        bottom: 0;
-        justify-content: space-around;
-        height: 40vh;
-      }
-    }
-  }
-}
-
-@media (min-width: 801px) {
-  .welcomepage {
-    height: 85vh;
-    width: 100vw;
-  }
-  .menu-list-item-link:hover{
-    text-shadow: 0 0 10px #50b9df;
-    color: #D7FDEC;
-  }
-  .title {
-    height: 85vh;
-    .title-box {
-      .title-textbox {
-        min-width: 300px;
-        max-width: 500px;
-      }
-    }
-  }
-}
-
-// @media (min-width: 900px) {
-  
-// }
-
-@media (min-width: 1300px) {
-  .title {
-    .title-box{
-      .title-welcome {
-        font-size: 7em;
-      }
-      .title-textbox {
-        font-size: 1.2em;
-        max-width: 800px;
-      }
-    }
-  }
-  .menu {
-    .menu-list {
-      .menu-list-item {
-        font-size: 2em;
+    @keyframes footer {
+      to {
+        opacity: 1;
       }
     }
   }
